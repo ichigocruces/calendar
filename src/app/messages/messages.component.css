@@ -1,0 +1,11 @@
+.info{
+    background-color: blue;
+}
+
+.warn{
+    background-color: yellow;
+}
+
+.error{
+    background-color: red;
+}

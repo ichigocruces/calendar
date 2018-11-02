@@ -1,0 +1,56 @@
+<h1>Clientes</h1>
+
+<div class="mat-elevation-z8 table">
+  <table mat-table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let client"> {{client.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let client"> {{client.nombre}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="apellido1">
+      <th mat-header-cell *matHeaderCellDef> Apellido 1 </th>
+      <td mat-cell *matCellDef="let client"> {{client.apellido1}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="apellido2">
+      <th mat-header-cell *matHeaderCellDef> Apellido 2 </th>
+      <td mat-cell *matCellDef="let client"> {{client.apellido2}} </td>
+    </ng-container>
+
+    <!-- telephone Column -->
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef> Telefono </th>
+      <td mat-cell *matCellDef="let client"> {{client.telefono}} </td>
+    </ng-container>
+
+    <!-- actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let client">
+          <mat-button-toggle-group>
+              <mat-button-toggle class="edit" title="edit" routerLink="/clients/detail/{{client.id}}"><mat-icon>edit</mat-icon></mat-button-toggle>
+              <mat-button-toggle class="delete" title="delete" (click)="delete(client)"><mat-icon>delete</mat-icon></mat-button-toggle>
+            </mat-button-toggle-group>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr><!-- routerLink="/clients/detail/{{row.id}}" -->
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>

@@ -1,0 +1,10 @@
+export class Client{
+    id: number;
+    nombre: string;
+    apellido1: string;
+    apellido2: string;
+    telefono: number;
+    email: string;
+    dni: string;
+    
+}

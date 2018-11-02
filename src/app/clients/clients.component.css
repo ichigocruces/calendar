@@ -1,0 +1,19 @@
+.table{
+    margin: 10px;
+}
+table {
+    width: 100%;
+}
+/* TODO: buscar otro color para el hover */
+.mat-row:hover{
+    background-color: #E91E63;
+    cursor: pointer;
+}
+
+/* //FIXME: arreglar el ancho de las columnas */
+.mat-column-id{
+    flex: 0 0 10px;
+}
+.mat-column-actions{
+    flex: 0 0 10px;
+}

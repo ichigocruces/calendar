@@ -1,0 +1,10 @@
+.card {
+    max-width: 600px;
+    margin: 10px;
+    float: left;
+    min-width: 400px;
+    min-height: 300px;
+}
+mat-form-field{
+    width: 100%
+}
