@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="33629999fd41361c48d5a60a5783dfdbd09276b7" datatype="html">
+        <source>Calendar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app-menu/app-menu.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7ffe39df9d88c972792bd8688b215392deb8313d" datatype="html">
+        <source>Clients</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app-menu/app-menu.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="488b37d8acc52beff8da02a4fb782185aa1ee22e" datatype="html">
+        <source>Employees</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app-menu/app-menu.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ea965d544a7dfd8185064c52cdfff553cf94d585" datatype="html">
+        <source>Messages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/messages/messages.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="99ee4faa69cd2ea8e3678c1f557c0ff1f05aae46" datatype="html">
+        <source>Clear</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/messages/messages.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f326522d3e5129625a32650416b2dd032f5df8c9" datatype="html">
+        <source>Client details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ec70f7c1b1f638aa5f9d63859801dd4a4f50d258" datatype="html">
+        <source>Contact data</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9e5ac183bc4cf80f01cde3ff96207b11464a4295" datatype="html">
+        <source>Surname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="85e9d7575049fc516a2a5f635ba7c697b3bdc332" datatype="html">
+        <source>Second surname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4753d99682179b036b9704d4c3b758103e25db2" datatype="html">
+        <source>Telephone</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b15bf6fa1e5bdabc9fde97a14bee63a5d5e62f6" datatype="html">
+        <source>email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357715145b4de2fdaefa8a53b45a886d0cc9ea1" datatype="html">
+        <source>Clinical data</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dde9c1e2deaa8accb46f5bf23dc50682dbfe48e4" datatype="html">
+        <source>Diseases</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-detail/client-detail.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cb60f1090750c9f6ba29ca9ae9b5958820beba52" datatype="html">
+        <source> No. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20371277706eedf7fd8a3f51633ca5d801cd4fc2" datatype="html">
+        <source> Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1cf6ad0bd9f5b2a9fe379d36b49c67a6b4e46759" datatype="html">
+        <source> Surname </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f621de66c76dac8d0d5f0b691ad0bc3316aa48dd" datatype="html">
+        <source> 2 Surname </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="530eeb22d9065ca2534fbdb18237f7508b03efec" datatype="html">
+        <source> Telephone </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="59a8c38db3091a63ac1cb9590188dc3a972acfb3" datatype="html">
+        <source> Actions </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5d6e2342e48d75e405f0fc141ab3e4a93c872dbb" datatype="html">
+        <source>Editar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a59acaaa269a1baf396247919e76286168e2a29" datatype="html">
+        <source>Borrar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

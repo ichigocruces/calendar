@@ -1,6 +1,6 @@
 <div *ngIf="messageService.message">
 
-  <h2>Messages</h2>
+  <h2 i18n>Messages</h2>
   <span [ngSwitch]="messageService.message.type">
   <p *ngSwitchCase="messageType.INFO" class="info">
       {{messageService.message.text}}
@@ -16,5 +16,5 @@
   </p>
   </span>
   <button class="clear"
-          (click)="messageService.clear()">clear</button>
+          (click)="messageService.clear()" i18n>Clear</button>
 </div>

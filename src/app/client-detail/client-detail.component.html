@@ -1,36 +1,36 @@
-<h1>Detalles del cliente</h1>
+<h1 i18n>Client details</h1>
 
-<div class="container" *ngIf="cliente">
+<div class="container" *ngIf="client">
   <mat-card id="datosContactoCard" class="card">
     <mat-card-header>
-      <mat-card-title>Datos de contacto</mat-card-title>
+      <mat-card-title i18n>Contact data</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-form-field>
-        <input matInput [(ngModel)]="client.nombre" placeholder="Nombre">
+        <input matInput [(ngModel)]="client.nombre" i18n-placeholder placeholder="Name">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="client.apellido1" placeholder="Apellido 1">
+        <input matInput [(ngModel)]="client.apellido1" i18n-placeholder placeholder="Surname">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="client.apellido2" placeholder="Apellido 2">
+        <input matInput [(ngModel)]="client.apellido2" i18n-placeholder placeholder="Second surname">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="client.telefono" type="tel" placeholder="Telefono">
+        <input matInput [(ngModel)]="client.telefono" type="tel" i18n-placeholder placeholder="Telephone">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="client.email" type="email" placeholder="email">
+        <input matInput [(ngModel)]="client.email" type="email" i18n-placeholder placeholder="email">
       </mat-form-field>
     </mat-card-content>
   </mat-card>
 
   <mat-card id="datosClinicos" class="card">
     <mat-card-header>
-      <mat-card-title>Datos clinicos</mat-card-title>
+      <mat-card-title i18n>Clinical data</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-form-field>
-        <textarea matInput [(ngModel)]="client.dolencias" placeholder="Dolencias"></textarea>
+        <textarea matInput [(ngModel)]="client.dolencias" i18n-placeholder placeholder="Diseases"></textarea>
       </mat-form-field>
     </mat-card-content>
   </mat-card>
