@@ -28,8 +28,8 @@ export class InMemoryDataService implements InMemoryDbService{
     ];
 
     const appointments: Appointment[] = [
-      {id: 1, start_date: new Date(2018, 10, 19, 12, 30, 0, 0), end_date: new Date(2018, 10, 19, 14, 30, 0, 0), client: client1, allDay: false},
-      {id: 2, start_date: new Date(2018, 10, 19, 15, 30, 0, 0), end_date: new Date(2018, 10, 19, 16, 30, 0, 0), client: client2, allDay: false},
+      {id: 1, start_date: new Date(2018, 11, 26, 12, 30, 0, 0), end_date: new Date(2018, 11, 26, 14, 30, 0, 0), client: client1, allDay: false},
+      {id: 2, start_date: new Date(2018, 11, 26, 15, 30, 0, 0), end_date: new Date(2018, 11, 26, 16, 30, 0, 0), client: client2, allDay: false},
     ];
 
     return {clients , appointments};

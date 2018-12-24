@@ -40,28 +40,19 @@ export class AppointmentService {
         'endDate',
         format(getEnd(viewDate), 'YYYY/MM/DD')
       );
-        var results: Appointment[];
-
-
-    // this.http.get(this.appointmentURL ).pipe(
-    //   tap(data => 
-    //     console.log('get data: ' + data)));
-
-        this.http.get(this.appointmentURL)
-  .subscribe(data => console.log(data));
-
-    
 
     return this.http
-      .get(this.appointmentURL)
+      .get(this.appointmentURL, {headers})
+      // FIXME: descomentar cuando este el servicio
+      // .get(this.appointmentURL, {headers, params})
       .pipe(
-        map(({ results }: { results: Appointment[] }) => {
+        map((results: Appointment[]) => {
           console.log('results: ' + results);
           return results.map((appointment: Appointment) => {
             return {
               title: appointment.client.nombre,
-              start: appointment.start_date,
-              end: appointment.end_date,
+              start: new Date(appointment.start_date),
+              end: new Date(appointment.end_date),
               allDay: appointment.allDay,
               meta: {
                 appointment
@@ -70,6 +61,7 @@ export class AppointmentService {
           });
         })
       );
+
   }
 
 
