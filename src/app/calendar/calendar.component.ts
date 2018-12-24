@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarEvent , DAYS_OF_WEEK} from 'angular-calendar';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { CalendarEvent, DAYS_OF_WEEK } from 'angular-calendar';
+import { Observable } from 'rxjs';
+import { Appointment } from "../appointment";
+import { AppointmentService } from "../appointment.service";
 
-import { LOCALE_ID, Inject } from '@angular/core';
+
+import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-calendar',
@@ -9,18 +15,25 @@ import { LOCALE_ID, Inject } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-
+  view: string='week';
   viewDate = new Date();
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
-  excludeDays: number[] = [0, 6];
-  
-  
-  events: CalendarEvent[] = [ ];
+  //excludeDays: number[] = [0, 6];
 
-  constructor(@Inject(LOCALE_ID) protected locale: string) { }
+  events$: Observable<Array<CalendarEvent<{ appointment: Appointment }>>>;
+
+  constructor(@Inject(LOCALE_ID) protected locale: string, private appointmentService: AppointmentService, private http: HttpClient) { }
 
   ngOnInit() {
-    console.log(this.locale);
+    this.fetchEvents();
   }
+
+  fetchEvents(): void{
+    this.events$ = this.appointmentService.fetchEvents(this.view, this.viewDate);
+
+  }
+
+  
+
 
 }
