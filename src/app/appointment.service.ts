@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { endOfDay, endOfMonth, endOfWeek, format, startOfDay, startOfMonth, startOfWeek } from 'date-fns';
 import { Observable } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Appointment } from "./appointment";
 import { CalendarEvent } from 'angular-calendar';
 
@@ -47,13 +47,35 @@ export class AppointmentService {
       // .get(this.appointmentURL, {headers, params})
       .pipe(
         map((results: Appointment[]) => {
-          console.log('results: ' + results);
           return results.map((appointment: Appointment) => {
             return {
               title: appointment.client.nombre,
               start: new Date(appointment.start_date),
               end: new Date(appointment.end_date),
               allDay: appointment.allDay,
+
+              color: appointment.color,
+
+              draggable: appointment.editable,
+              resizable: {
+                beforeStart: appointment.editable,
+                afterEnd: appointment.editable
+              },
+              actions: [
+                {
+                  label: '<i class="fa fa-fw fa-pencil"></i>',
+                  onClick: ({ event }: { event: CalendarEvent }): void => {
+                    console.log('Edit event', event);
+                  }
+                },
+                {
+                  label: '<i class="fa fa-fw fa-times"></i>',
+                  onClick: ({ event }: { event: CalendarEvent }): void => {
+                    console.log('Event deleted', event);
+                  }
+                }
+              ],
+
               meta: {
                 appointment
               }

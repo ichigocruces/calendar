@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Client } from "./client";
+import { colors } from "./colors";
 import { Appointment } from "./appointment";
 
 @Injectable({
@@ -28,8 +29,9 @@ export class InMemoryDataService implements InMemoryDbService{
     ];
 
     const appointments: Appointment[] = [
-      {id: 1, start_date: new Date(2018, 11, 26, 12, 30, 0, 0), end_date: new Date(2018, 11, 26, 14, 30, 0, 0), client: client1, allDay: false},
-      {id: 2, start_date: new Date(2018, 11, 26, 15, 30, 0, 0), end_date: new Date(2018, 11, 26, 16, 30, 0, 0), client: client2, allDay: false},
+      {id: 1, start_date: new Date(2018, 11, 26, 12, 30, 0, 0), end_date: new Date(2018, 11, 26, 14, 30, 0, 0), client: client1, allDay: false, editable:true, color:colors.red},
+      {id: 2, start_date: new Date(2018, 11, 26, 15, 30, 0, 0), end_date: new Date(2018, 11, 26, 16, 30, 0, 0), client: client2, allDay: false, editable:true,color:colors.blue},
+      {id: 3, start_date: new Date(), client: client2, allDay: true, editable:true, color:colors.yellow},
     ];
 
     return {clients , appointments};
