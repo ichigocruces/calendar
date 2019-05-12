@@ -16,7 +16,8 @@ const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json
 export class AppointmentService {
 
   constructor(private http: HttpClient) { }
-  private appointmentURL = 'api/appointments';
+  private appointmentURL = 'https://localhost:8443/api/appointments';
+  
 
   fetchEvents(view: string, viewDate: Date): Observable<Array<CalendarEvent<{ appointment: Appointment }>>> {
     const getStart: any = {

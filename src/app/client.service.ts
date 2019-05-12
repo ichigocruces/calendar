@@ -17,7 +17,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClientService {
-  private clientsURL = 'api/clients';
+  private clientsURL = 'https://localhost:8443/api/clients';
 
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
