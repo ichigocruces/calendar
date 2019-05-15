@@ -28,6 +28,7 @@ export class CalendarComponent implements OnInit {
   excludeDays: number[] = [0, 6];
   dayStartHour: number = 7;
   dayEndHour: number = 21;
+  currentEmployee: number = 1;
 
   events$: Observable<Array<CalendarEvent<{ appointment: Appointment }>>>;
 
@@ -38,7 +39,7 @@ export class CalendarComponent implements OnInit {
   }
 
   fetchEvents(): void{
-    this.events$ = this.appointmentService.fetchEvents(this.view, this.viewDate);
+    this.events$ = this.appointmentService.fetchEvents(this.view, this.viewDate, this.currentEmployee);
 
   }
 

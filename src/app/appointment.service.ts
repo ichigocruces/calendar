@@ -4,6 +4,7 @@ import { endOfDay, endOfMonth, endOfWeek, format, startOfDay, startOfMonth, star
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Appointment } from "./appointment";
+import { getColor } from "./employee";
 import { CalendarEvent } from 'angular-calendar';
 
 
@@ -19,7 +20,7 @@ export class AppointmentService {
   private appointmentURL = 'https://localhost:8443/api/appointments';
   
 
-  fetchEvents(view: string, viewDate: Date): Observable<Array<CalendarEvent<{ appointment: Appointment }>>> {
+  fetchEvents(view: string, viewDate: Date, employeeID: number): Observable<Array<CalendarEvent<{ appointment: Appointment }>>> {
     const getStart: any = {
       month: startOfMonth,
       week: startOfWeek,
@@ -40,22 +41,24 @@ export class AppointmentService {
       .set(
         'endDate',
         format(getEnd(viewDate), 'YYYY/MM/DD')
+      ).set(
+        'employeeId',
+        '' + employeeID
       );
 
     return this.http
-      .get(this.appointmentURL, {headers})
+      .get(this.appointmentURL, {headers, params})
       // FIXME: descomentar cuando este el servicio
       // .get(this.appointmentURL, {headers, params})
       .pipe(
         map((results: Appointment[]) => {
           return results.map((appointment: Appointment) => {
             return {
-              title: appointment.client.nombre,
-              start: new Date(appointment.start_date),
-              end: new Date(appointment.end_date),
+              title: appointment.cliente.nombre,
+              start: new Date(appointment.fhIni),
+              end: new Date(appointment.fhFin),
               allDay: appointment.allDay,
-
-              color: appointment.color,
+              //color: getColor(appointment.empleado),
 
               draggable: appointment.editable,
               resizable: {

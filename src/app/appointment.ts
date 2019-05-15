@@ -1,12 +1,16 @@
 import { Client } from "./client";
+import { Employee } from "./employee";
 import { EventColor, EventAction } from "calendar-utils";
 
 
 export interface Appointment{
-    id: number,
-    start_date: Date,
-    end_date?: Date,
-    client: Client,
+    codCita: number,
+    fhIni: Date,
+    fhFin?: Date,
+    cliente?: Client,
+    empleado: Employee,
+    estado: AppointmentStatus,
+
     allDay: boolean,
     editable:boolean,
 
@@ -15,7 +19,13 @@ export interface Appointment{
         beforeStart: boolean, // this allows you to configure the sides the event is resizable from
         afterEnd: boolean
       }
-    color?: EventColor,
+    
     actions?: EventAction,
     
+    
+}
+
+interface AppointmentStatus{
+    codEstado: number,
+    descripcion: string
 }
