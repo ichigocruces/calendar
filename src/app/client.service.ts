@@ -7,6 +7,8 @@ import { MessageService } from "./message.service";
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
+
 
 
 const httpOptions = {
@@ -17,7 +19,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClientService {
-  private clientsURL = 'https://localhost:8443/api/clients';
+  private clientsURL = environment.URL_API + '/clients';
 
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
@@ -58,7 +60,7 @@ export class ClientService {
 
   /** DELETE: delete the hero from the server */
   delete (client: Client | number): Observable<Client> {
-    const id = typeof client === 'number' ? client : client.id;
+    const id = typeof client === 'number' ? client : client.codCliente;
     const url = '${this.clientsURL}/${id}';
 
     return this.http.delete<Client>(url, httpOptions).pipe(

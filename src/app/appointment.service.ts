@@ -4,8 +4,8 @@ import { endOfDay, endOfMonth, endOfWeek, format, startOfDay, startOfMonth, star
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Appointment } from "./appointment";
-import { getColor } from "./employee";
 import { CalendarEvent } from 'angular-calendar';
+import { environment } from '../environments/environment';
 
 
 const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -17,7 +17,7 @@ const headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json
 export class AppointmentService {
 
   constructor(private http: HttpClient) { }
-  private appointmentURL = 'https://localhost:8443/api/appointments';
+  private appointmentURL = environment.URL_API + '/appointments';
   
 
   fetchEvents(view: string, viewDate: Date, employeeID: number): Observable<Array<CalendarEvent<{ appointment: Appointment }>>> {

@@ -9,9 +9,6 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 //HTTP
 import { HttpClientModule }    from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
-
 
 //material modules
 import { MaterialModule } from './material/material.module';
