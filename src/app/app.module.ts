@@ -13,6 +13,7 @@ import { HttpClientModule }    from '@angular/common/http';
 //material modules
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 //APP common components
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { CalendarComponent } from './calendar/calendar.component';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
+    FlexLayoutModule,
     MaterialModule, 
     BrowserAnimationsModule, 
     AppRoutingModule,

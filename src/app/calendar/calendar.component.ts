@@ -6,7 +6,6 @@ import { AppointmentService } from "../appointment.service";
 import { CalendarEvent, DAYS_OF_WEEK, CalendarEventTimesChangedEvent, CalendarDateFormatter } from 'angular-calendar';
 import { CustomDateFormatter } from '../custom-date-formatter.provider';
 
-
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -28,6 +27,9 @@ export class CalendarComponent implements OnInit {
   excludeDays: number[] = [0, 6];
   dayStartHour: number = 7;
   dayEndHour: number = 21;
+
+  //sidenav
+  sidenav_opened: boolean = false;
   currentEmployee: number = 1;
 
   events$: Observable<Array<CalendarEvent<{ appointment: Appointment }>>>;

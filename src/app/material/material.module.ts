@@ -10,7 +10,8 @@ import {
   MatInputModule,
   MatCardModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule, 
+  MatSidenavModule
 } from '@angular/material';
 
 const material_modules = [
@@ -23,7 +24,7 @@ const material_modules = [
   MatInputModule,
   MatCardModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule, MatSidenavModule
 ];
 
 
