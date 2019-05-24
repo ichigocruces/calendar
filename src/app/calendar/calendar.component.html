@@ -28,10 +28,60 @@
         </div>
     </div>
 
+    <!-- ContextMenu de los eventos -->
+    <context-menu #eventMenu>
+        <ng-template contextMenuItem (execute)="editEvent($event.item)">
+          Edit event
+        </ng-template>
+        <ng-template contextMenuItem (execute)="deleteEvent($event.item)">
+          Delete event
+        </ng-template>
+      </context-menu>
+
+      <!-- la template es para poder incrustar en el evento el contextMenu -->
+      <ng-template
+        #weekEventTemplate
+        let-weekEvent="weekEvent"
+        let-tooltipPlacement="tooltipPlacement"
+        let-eventClicked="eventClicked">
+      <div
+        class="cal-event"
+        [style.backgroundColor]="weekEvent.event.color?.secondary"
+        [style.borderColor]="weekEvent.event.color?.primary"
+        [mwlCalendarTooltip]="!tooltipDisabled ? (weekEvent.event.title | calendarEventTitle:'weekTooltip':weekEvent.event) : ''"
+        [tooltipPlacement]="tooltipPlacement"
+        [tooltipEvent]="weekEvent.event"
+        [tooltipTemplate]="tooltipTemplate"
+        [tooltipAppendToBody]="tooltipAppendToBody"
+        (mwlClick)="eventClicked.emit()"
+          [contextMenu]="eventMenu"
+          [contextMenuSubject]="weekEvent.event">
+        <mwl-calendar-event-actions
+          [event]="weekEvent.event"
+          [customTemplate]="eventActionsTemplate">
+        </mwl-calendar-event-actions>
+        <mwl-calendar-event-title
+          [event]="weekEvent.event"
+          [customTemplate]="eventTitleTemplate"
+          view="week">
+        </mwl-calendar-event-title>
+      </div>
+    </ng-template>
+
+    <!-- Si hay eventos se muestra el calendario, mientras no haya se muestra el mensaje de Loading -->
     <div *ngIf="events$ | async; else loading; let events">
-      <mwl-calendar-week-view [viewDate]="viewDate" [weekStartsOn]="weekStartsOn" [excludeDays]="excludeDays" [events]="events"
-        [dayStartHour]="dayStartHour" [dayEndHour]="dayEndHour" [locale]="locale" [refresh]="refresh" (eventClicked)="eventClicked($event)"
-        (eventTimesChanged)="eventTimesChanged($event)">
+      <mwl-calendar-week-view 
+        [viewDate]="viewDate" 
+        [weekStartsOn]="weekStartsOn" 
+        [excludeDays]="excludeDays" 
+        [events]="events"
+        [dayStartHour]="dayStartHour" 
+        [dayEndHour]="dayEndHour" 
+        [locale]="locale" 
+        [refresh]="refresh" 
+        (eventClicked)="eventClicked($event)"
+        (eventTimesChanged)="eventTimesChanged($event)"
+        [eventTemplate]="weekEventTemplate">
       </mwl-calendar-week-view>
     </div>
 

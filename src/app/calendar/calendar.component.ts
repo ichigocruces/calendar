@@ -59,4 +59,12 @@ export class CalendarComponent implements OnInit {
     console.log('Event clicked', event);
   }
 
+  editEvent(event: CalendarEvent ): void {
+    console.log('Edit event', event.id, event.title);
+  }
+
+  deleteEvent(event: CalendarEvent ): void {
+    console.log('delete event', event.id, event.title);
+  }
+
 }

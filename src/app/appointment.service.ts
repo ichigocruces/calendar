@@ -54,6 +54,7 @@ export class AppointmentService {
         map((results: Appointment[]) => {
           return results.map((appointment: Appointment) => {
             return {
+              id: appointment.codCita,
               title: appointment.cliente.nombre,
               start: new Date(appointment.fhIni),
               end: new Date(appointment.fhFin),
