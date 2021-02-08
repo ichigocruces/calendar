@@ -91,5 +91,13 @@ export class AppointmentService {
 
   }
 
+  /** DELETE: delete the hero from the server */
+  delete (appointment: Appointment | number): Observable<Appointment> {
+    const id = typeof appointment === 'number' ? appointment : appointment.codCita;
+    const url = '${this.appointmentURL}/${id}';
+
+    return this.http.delete<Appointment>(url, {headers});
+  }
+
 
 }
